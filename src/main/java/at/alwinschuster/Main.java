@@ -35,7 +35,10 @@ public class Main {
 
         System.out.println("------------------- TEST 2 -------------------");
         // ctx.getDestination() -> Always null, expected List.of("a", "b", "c")
-        mapper.getConfiguration().setPropertyCondition(ctx -> ctx.getDestination() == null);
+        mapper.getConfiguration().setPropertyCondition(ctx -> {
+            System.out.println("Destination: " + ctx.getDestination());
+            return ctx.getDestination() == null;
+        });
 
         mapper.map(obj, updates);
 
