@@ -34,7 +34,7 @@ public class Main {
         // obj should be updated using the updates object. All null values should not be updated.
 
         System.out.println("------------------- TEST 2 -------------------");
-        // ctx.getDestination() -> Always null
+        // ctx.getDestination() -> Always null, expected List.of("a", "b", "c")
         mapper.getConfiguration().setPropertyCondition(ctx -> ctx.getDestination() == null);
 
         mapper.map(obj, updates);
