@@ -39,7 +39,8 @@ public class Jtest {
         ModelMapper mapper = new ModelMapper();
         MyObject obj = new MyObject("bar", List.of("a", "b", "c"));
         MyObject updates = new MyObject( "candy", null);
-        // obj should be updated using the updates object. All null values should not be updated.
+        // obj should be updated using the updates object. 
+        // All null values should not be updated.
 
         System.out.println("------------------- TEST 1 -------------------");
         mapper.getConfiguration().setPropertyCondition(Conditions.isNotNull());
